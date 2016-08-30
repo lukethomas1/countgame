@@ -22,6 +22,11 @@ td {
     margin: 0 auto;
 }
 
+.idleheader {
+    float: left;
+    margin-right: 1em;
+}
+
 .smallnums {
     text-align: center;
 }
@@ -36,6 +41,11 @@ td {
     display: block;
 }
 
+.togglehover {
+    background-color: black;
+    color: white;
+}
+
 #gold {
     text-align: right;
 }
@@ -44,6 +54,22 @@ td {
     border-bottom: solid black 2px;
     margin-bottom: 5em;
     background-color: #fff0f5;
+    height: 5em;
+}
+
+#idlecontrols {
+    float: right;
+    display: none;
+}
+
+#idleonoff {
+    padding: 2px;
+    border: 2px solid black;
+}
+
+#idleplusminus {
+    padding: 2px;
+    border: 2px solid black;
 }
 
 #missions {
@@ -53,7 +79,8 @@ td {
 #name {
     font-size: 4em;
     margin: 0;
-    padding: .5em 0 .5em 1em;
+    padding: 0 0 .5em 1em;
+    float: left;
 }
 
 #number {

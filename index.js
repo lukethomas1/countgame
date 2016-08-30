@@ -2,18 +2,47 @@ $(document).ready(function() {
     var bigNumber;
     var plusNumber = 0;
     var minusNumber = 0;
+
     var clickstrength = 1;
+    var CLICKMULTIPLIER = 2;
+
     var gold = 0;
-    var doublepower = 10;
+
+    var doublepowerprice = 10;
+    var DOUBLEPOWERMULTIPLIER = 4;
+
+    var idleprice = 100;
+    var IDLEMULTIPLIER = 10;
+    var idleclicks = 0;
+    var idleOn = false;
+    var idlePos = true;
 
     var db = firebase.database().ref('numberstuff');
 
     $("#doublepower").click(function() {
-        if(gold >= doublepower) {
-            clickstrength = clickstrength * 2;
-            gold = gold - doublepower;
-            doublepower = doublepower * 4;
-            $("#doublepowerprice").text("$" + doublepower);
+        if(gold >= doublepowerprice) {
+            clickstrength *= CLICKMULTIPLIER;
+            gold -= doublepowerprice;
+            doublepowerprice *= DOUBLEPOWERMULTIPLIER;
+            $("#doublepowerprice").text("$" + doublepowerprice);
+            updateGold();
+        }
+    });
+
+    // On click of the idle upgrade in the shop
+    $("#idle").click(function() {
+        // If player has enough money
+        if(gold >= idleprice) {
+            // If this is the first idle purchase
+            if(idleprice == 100) {
+                // Fade in the idle controls
+                $("#idlecontrols").fadeIn('slow/400/fast');
+            }
+
+            ++idleclicks;
+            gold -= idleprice;
+            idleprice *= IDLEMULTIPLIER;
+            $("#idleprice").text("$" + idleprice);
             updateGold();
         }
     });
@@ -29,6 +58,84 @@ $(document).ready(function() {
     $("#arrowdown").click(function(){
         // Decrement bigNumber and update the text on the screen
         $("#minusnum").text((minusNumber -= clickstrength));
+        $("#gold").text("Gold: $" + (gold += clickstrength));
+    });
+
+    // Hover listener
+    $("#idleonoff").hover(function() {
+        $(this).toggleClass('togglehover');
+
+/*        // Toggle the text from on to off or opposite
+        if($(this).text().toLowerCase() === "on") {
+            $(this).text("Off");
+        }
+
+        else {
+            $(this).text("On");
+        }*/
+    }, function() {
+        $(this).toggleClass('togglehover');
+
+/*        // Toggle the text from on to off or opposite
+        if($(this).text().toLowerCase() === "on") {
+            $(this).text("Off");
+        }
+
+        else {
+            $(this).text("On");
+        }*/
+    });
+
+    $("#idleonoff").click(function() {
+        if($(this).hasClass('togglehover')) {
+            if(idleOn) {
+                $(this).text("Off");
+                idleOn = false;
+            }
+
+            else {
+                $(this).text("On");
+                idleOn = true;
+                idleClick();
+            }
+        }
+    });
+
+    // Hover Listener
+    $("#idleplusminus").hover(function() {
+        $(this).toggleClass('togglehover');
+
+/*        if($(this).text().toLowerCase() === "+") {
+            $(this).text("-");
+        }
+
+        else {
+            $(this).text("+");
+        }*/
+    }, function() {
+        $(this).toggleClass('togglehover');
+
+/*        if($(this).text().toLowerCase() === "+") {
+            $(this).text("-");
+        }
+
+        else {
+            $(this).text("+");
+        }*/
+    });
+
+    $("#idleplusminus").click(function() {
+        if($(this).hasClass('togglehover')) {
+            if(idlePos) {
+                $(this).text("-");
+                idlePos = false;
+            }
+
+            else {
+                $(this).text("+");
+                idlePos = true;
+            }
+        }
     });
 
     // Add a listener that automatically updates the number on the screen
@@ -38,6 +145,22 @@ $(document).ready(function() {
 
     // Delay updating firebase until enough time has passed to grab num from db
     setTimeout(updateFirebase.bind(null, db), 1000);
+
+    function idleClick() {
+        for(var i = 0; i < idleclicks; ++i) {
+            if(idlePos) {
+                $("#arrowup").trigger('click');
+            }
+
+            else {
+                $("#arrowdown").trigger('click');
+            }
+        }
+
+        if(idleOn) {
+            setTimeout(idleClick, 1000);
+        }
+    }
 
     function updateFirebase(db) {
         // Update database
