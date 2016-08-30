@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    background-color: #e6e6fa;
+    cursor: default;
+    font-family: 'Patua One', cursive;
+
+    /* Make text unable to be selected, stops highlighting while clicking */
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.arrows {
+    max-width: 3.5em;
+    max-height: 3.5em;
+    display: block;
+    margin: 0 auto;
+}
+
+.smallnums {
+    text-align: center;
+}
+
+.tab {
+    float: left;
+    min-width: 33%;
+}
+
+.tabheader {
+    text-align: center;
+    display: block;
+}
+
+#gold {
+    text-align: right;
+}
+
+#header {
+    border-bottom: solid black 2px;
+    margin-bottom: 5em;
+    background-color: #fff0f5;
+}
+
+#missions {
+    float: right;
+}
+
+#name {
+    font-size: 4em;
+    margin: 0;
+    padding: .5em 0 .5em 1em;
+}
+
+#number {
+    font-size: 10em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#shoptable {
+    margin: 0 auto;
+}

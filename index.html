@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counting</title>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCENbeCz4u32FGaP0Q-mcZwLd5vutL9C5s",
+            authDomain: "kownt-7fa81.firebaseapp.com",
+            databaseURL: "https://kownt-7fa81.firebaseio.com",
+            storageBucket: "kownt-7fa81.appspot.com",
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!-- Google Fonts, Patua One -->
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="./index.js"></script>
+
+</head>
+<body>
+
+
+<div id="header">
+    <h1 id="name">Count</h1>
+</div>
+
+<div class="tab" id="shopTab">
+    <h1 class="tabheader" id="shopheader">Shop</h1>
+    <h1 id="gold">Gold: $0</h1>
+    <table id="shoptable">
+        <tr>
+            <td id="doublepower"><h3>2x Click Power</h3><h3 id="doublepowerprice">$10</h3></td>
+            <td id="idle"><h3>+1 Click Per Second</h3><h3 id="idleprice">$10</h3></td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+</div>
+
+<div class="tab" id="numsandbuttonsTab">
+    <!-- <div class="buttons" id="upbutton"></div> -->
+    <img class="arrows" id="arrowup" src="./arrowup.png">
+    <h1 class="smallnums" id="plusnum">+0</h1>
+
+    <h1 id="number">0</h1>
+
+    <h1 class="smallnums" id="minusnum">-0</h1>
+    <img class="arrows" id="arrowdown" src="./arrowdown.gif">
+    <!-- <div class="buttons" id="downbutton"></div> -->
+</div>
+
+<div class="tab" id="missionsTab">
+    <h1 class="tabheader" id="missionsheader">Missions</h1>
+</div>
+
+</body>
+</html>
