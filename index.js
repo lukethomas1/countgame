@@ -17,7 +17,11 @@ $(document).ready(function() {
     var idleOn = false;
     var idlePos = true;
 
+    var username = document.cookie;
+
     var db = firebase.database().ref('numberstuff');
+
+    $("#user").text(username);
 
     $("#doublepower").click(function() {
         if(gold >= doublepowerprice) {
@@ -186,6 +190,3 @@ $(document).ready(function() {
         $("#gold").text("Gold: $" + gold);
     }
 });
-
-
-

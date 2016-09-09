@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCENbeCz4u32FGaP0Q-mcZwLd5vutL9C5s",
+            authDomain: "kownt-7fa81.firebaseapp.com",
+            databaseURL: "https://kownt-7fa81.firebaseio.com",
+            storageBucket: "kownt-7fa81.appspot.com",
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!-- CSS - Cascading Style Sheets -->
+    <link rel="stylesheet" href="./login.css">
+
+    <!-- Google Fonts - Ubuntu -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,700" rel="stylesheet">
+
+    <!-- Google Fonts - Shojumaru -->
+    <link href="https://fonts.googleapis.com/css?family=Shojumaru" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="./login.js"></script>
+</head>
+<body>
+<button id="signup">Sign Up</button>
+
+<div id="container">
+    <h1 id="name">Count</h1>
+
+    <div id="login">
+        <div id="inputs">
+            <div>
+                <input id="username" class="mainbox" type="text" name="Username" placeholder="Username">
+            </div>
+            <div>
+                <input id="password" class="mainbox" type="text" name="Password" placeholder="Password">
+            </div>
+        </div>
+        <div id="loginButton" class="mainbox">Login</div>
+    </div>
+</div>
+</body>
+</html>

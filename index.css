@@ -84,11 +84,22 @@ td {
 }
 
 #number {
-    font-size: 10em;
+    font-size: 8em;
     text-align: center;
     vertical-align: middle;
 }
 
+#numsandbuttonsTab {
+    width: 33%;
+}
+
 #shoptable {
     margin: 0 auto;
+}
+
+#user {
+    position: absolute;
+    text-align: right;
+    margin-top: 70vh;
+    margin-left: 90%;
 }

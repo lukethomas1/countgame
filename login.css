@@ -1,0 +1,73 @@
+body {
+	/*background-color: #2176AE;*/
+	background-color: #004E64;
+}
+
+input {
+	/*text-align: center;*/
+	padding: 0 1em;
+	font-size: 1em;
+	font-style: italic;
+	border: 1px solid black;
+}
+
+.mainbox {
+	height: 3em;
+	width: 22em;
+	font-family: 'Ubuntu', sans-serif;
+	margin: auto;
+}
+
+#container {
+	position: relative;
+  	top: 50%;
+  	transform: translateY(50%);
+  	width: 24em;
+  	padding: 5em;
+  	margin: 0 auto;
+  	background-color: #00A5CF;
+  	border-radius: 1em;
+}
+
+#inputs {
+	margin-bottom: 2em;
+}
+
+#login {
+    text-align: center;
+}
+
+#loginButton {
+	width: 24em;
+	border-radius: 0.5em;
+	background-color: #7AE582;
+	margin: auto;
+	line-height: 3em;
+	box-shadow: 4px 4px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+#name {
+	font-family: 'Shojumaru', sans-serif;
+	font-size: 4em;
+	text-align: center;
+	text-shadow: 4px 4px #454549;
+	margin-top: 0;
+}
+
+#password {
+	border-radius: 0 0 0.5em 0.5em;
+	/*border-bottom-left-radius: 0.5em;*/
+	/*border-bottom-right-radius: 0.5em;*/
+	border-top: 0;
+}
+
+#signup {
+	float: right;
+	padding: 1em;
+}
+
+#username {
+	/*border-top-right-radius: 0.5em;*/
+	/*border-top-left-radius: 0.5em;*/
+	border-radius: 0.5em 0.5em 0 0;
+}
