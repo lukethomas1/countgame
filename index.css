@@ -81,6 +81,8 @@ td {
     margin: 0;
     padding: 0 0 .5em 1em;
     float: left;
+    font-family: "Shojumaru";
+    text-shadow: 4px 4px #454549;
 }
 
 #number {

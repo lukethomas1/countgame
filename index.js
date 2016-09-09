@@ -11,13 +11,14 @@ $(document).ready(function() {
     var doublepowerprice = 10;
     var DOUBLEPOWERMULTIPLIER = 4;
 
-    var idleprice = 100;
     var IDLEMULTIPLIER = 10;
+    var IDLEINITIAL = 100;
+    var idleprice = IDLEINITIAL;
     var idleclicks = 0;
     var idleOn = false;
     var idlePos = true;
 
-    var username = document.cookie;
+    var username = (document.cookie).slice(document.cookie.indexOf("=") + 1);
 
     var db = firebase.database().ref('numberstuff');
 
@@ -38,7 +39,7 @@ $(document).ready(function() {
         // If player has enough money
         if(gold >= idleprice) {
             // If this is the first idle purchase
-            if(idleprice == 100) {
+            if(idleprice == IDLEINITIAL) {
                 // Fade in the idle controls
                 $("#idlecontrols").fadeIn('slow/400/fast');
             }

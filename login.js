@@ -30,8 +30,6 @@ $(document).ready(function() {
 			if(snapshot.hasChild(username)) {
 				if(snapshot.child(username).val() === password) {
                     document.cookie = "username=" + username;
-                    alert("username=" + username);
-                    alert(document.cookie);
 					window.location.href = "./index.html";
 				}
 
