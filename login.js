@@ -41,6 +41,6 @@ $(document).ready(function() {
 			else {
 				alert("Username does not exist.");
 			}
-		})
+		});
 	});
 });
