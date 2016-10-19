@@ -11,11 +11,19 @@ input {
 	border: 1px solid black;
 }
 
+.login-hover {
+    border: 2px solid white;
+}
+
 .mainbox {
 	height: 3em;
 	width: 22em;
 	font-family: 'Ubuntu', sans-serif;
 	margin: auto;
+}
+
+.offset-padding {
+    padding: 2px;
 }
 
 #container {
@@ -37,7 +45,7 @@ input {
     text-align: center;
 }
 
-#loginButton {
+#login-button {
 	width: 24em;
 	border-radius: 0.5em;
 	background-color: #7AE582;
