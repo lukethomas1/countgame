@@ -69,26 +69,8 @@ $(document).ready(function() {
     // Hover listener
     $("#idleonoff").hover(function() {
         $(this).toggleClass('togglehover');
-
-/*        // Toggle the text from on to off or opposite
-        if($(this).text().toLowerCase() === "on") {
-            $(this).text("Off");
-        }
-
-        else {
-            $(this).text("On");
-        }*/
     }, function() {
         $(this).toggleClass('togglehover');
-
-/*        // Toggle the text from on to off or opposite
-        if($(this).text().toLowerCase() === "on") {
-            $(this).text("Off");
-        }
-
-        else {
-            $(this).text("On");
-        }*/
     });
 
     $("#idleonoff").click(function() {
@@ -109,24 +91,8 @@ $(document).ready(function() {
     // Hover Listener
     $("#idleplusminus").hover(function() {
         $(this).toggleClass('togglehover');
-
-/*        if($(this).text().toLowerCase() === "+") {
-            $(this).text("-");
-        }
-
-        else {
-            $(this).text("+");
-        }*/
     }, function() {
         $(this).toggleClass('togglehover');
-
-/*        if($(this).text().toLowerCase() === "+") {
-            $(this).text("-");
-        }
-
-        else {
-            $(this).text("+");
-        }*/
     });
 
     $("#idleplusminus").click(function() {

@@ -1,11 +1,7 @@
 $(document).ready(function() {
     $("#login-button").hover(buttonHover, buttonHover);
-
     $("#signup").click(signUp);
-
 	$("#login-button").click(login);
-
-    // Keyup handler
     $(document).on('keydown', keyDown);
 });
 
@@ -39,12 +35,10 @@ function login() {
                     document.cookie = "username=" + username;
                     window.location.href = "./index.html";
                 }
-
                 else {
                     showError("Wrong Password");
                 }
             }
-
             else {
                 showError("Username does not exist.");
             }
@@ -83,7 +77,6 @@ function signUp() {
             db.set(derp);
             window.location.href = "./index.html";
         }
-
         else {
             showError("This account, " + username + ", already exists!");
         }
