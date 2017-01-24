@@ -1,9 +1,3 @@
-/*
-Author: Luke Thomas
-Date: 10/19/16
-Description:
-*/
-
 $(document).ready(function() {
     var bigNumber;
     var plusNumber = 0;

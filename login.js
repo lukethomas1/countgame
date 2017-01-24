@@ -1,12 +1,3 @@
-/*
-Author: Luke Thomas
-Date: 10/19/16
-Description: Checks the database to see if the credentials are valid,
-shows error message if not, also allows for signup capability.
-*/
-
-
-// Assign click, hover, and keydown handlers
 $(document).ready(function() {
     $("#login-button").hover(buttonHover, buttonHover);
 
@@ -14,6 +5,7 @@ $(document).ready(function() {
 
 	$("#login-button").click(login);
 
+    // Keyup handler
     $(document).on('keydown', keyDown);
 });
 
@@ -36,18 +28,30 @@ function keyDown(event) {
 
 
 function login() {
+    var db = firebase.database().ref("accounts");
     var username = $("#username").val();
     var password = $("#password").val();
 
     if(username != "" && password != "") {
-        // Pull data from firebase and verify it
-        var db = firebase.database().ref("accounts");
-        db.once('value', verifyInformation);
+        db.once('value', function(snapshot) {
+            if(snapshot.hasChild(username)) {
+                if(snapshot.child(username).val() === password) {
+                    document.cookie = "username=" + username;
+                    window.location.href = "./index.html";
+                }
+                else {
+                    showError("Wrong Password");
+                }
+            }
+            else {
+                showError("Username does not exist.");
+            }
+        });
     }
 }
 
 
-// Displays the noty error message with the text supplied
+// Displays the noty error message
 function showError(errorText) {
     var errorNoty = noty({
         animation: {
@@ -73,35 +77,12 @@ function signUp() {
 
         // make sure input is valid, check that the account is valid
         if(username != "" && password != "" && !snapshot.hasChild(username)) {
-            // push new account to database
             derp[username] = password;
             db.set(derp);
-
             window.location.href = "./index.html";
         }
         else {
             showError("This account, " + username + ", already exists!");
         }
     });
-}
-
-
-function verifyInformation(snapshot) {
-    var username = $("#username").val();
-    var password = $("#password").val();
-
-    // if the account is in the database
-    if(snapshot.hasChild(username)) {
-        // if the password is correct for the account
-        if(snapshot.child(username).val() === password) {
-            document.cookie = "username=" + username;
-            window.location.href = "./index.html";
-        }
-        else {
-            showError("Wrong Password");
-        }
-    }
-    else {
-        showError("Username does not exist.");
-    }
 }
