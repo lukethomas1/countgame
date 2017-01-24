@@ -1,10 +1,7 @@
 $(document).ready(function() {
     $("#login-button").hover(buttonHover, buttonHover);
-
     $("#signup").click(signUp);
-
 	$("#login-button").click(login);
-
     // Keyup handler
     $(document).on('keydown', keyDown);
 });
@@ -12,7 +9,6 @@ $(document).ready(function() {
 
 function buttonHover() {
     $("#login-button").toggleClass("login-hover");
-
     // Toggle off extra padding to compensate for border
     $("#login-button").toggleClass('offset-padding');
 }
